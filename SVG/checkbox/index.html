@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>svg checkbox效果</title>
+  <style type="text/css">
+  span{
+    display: none;
+  }
+    input[type="checkbox"]:checked + span {
+      display: block;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="box">
+    <input type="checkbox" id="checkbox" name="">
+    <label style="padding: 0 30px; background: red; position: relative; z-index: -1;">
+      <input type="checkbox" name="" style="opacity: 0;" />
+      <span>123</span>
+    </label>
+  </div>
+</body>
+</html>
