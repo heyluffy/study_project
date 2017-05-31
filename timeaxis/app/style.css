@@ -1,0 +1,98 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+ul, li{
+    list-style: none;
+}
+.timeaxis-box{
+    position: relative;
+    width: 90%;
+    max-width: 1190px;
+    margin: 0 auto;
+}
+.timeaxis-line{
+    position: absolute;
+    top: 0px;
+    left: 300px;
+    width: 10px;
+    height: 100%;
+    background: #afdcf8;
+}
+.timeaxis-item{
+    position: relative;
+    margin-top: 15px;
+}
+.timeaxis-box .item-date-time{
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    width: 160px;
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    text-align: right;
+}
+.timeaxis-box .item-date-time span{
+    display: block;
+}
+.timeaxis-box .item-date{
+    font-size: 14px;
+    line-height: 18px;
+    color: #bdd0db;
+}
+.timeaxis-box .item-time{
+    font-size: 50px;
+    line-height: 56px;
+    color: #6cbfee;
+}
+.timeaxis-box .circle{
+    position: absolute;
+    top: 8px;
+    left: 284px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    background: #46a4da;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #afdcf8;
+}
+.timeaxis-box .con{
+    margin-left: 350px;
+    padding: 10px 20px;
+    color: #fff;
+    background: #6cbfee;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+.timeaxis-box .con h2{
+    font-size: 20px;
+    line-height: 30px;
+}
+.timeaxis-box .con p{
+    font-size: 16px;
+    line-height: 24px;
+}
+.timeaxis-box .timeaxis-item:nth-child(2n) .con{
+    background: #3594cb;
+}
+.timeaxis-box .timeaxis-item:nth-child(2n) .item-time{
+    color: #3594cb;
+}
+@media screen and (max-width: 600px){
+    .timeaxis-item{
+        padding-top: 80px;
+    }
+    .timeaxis-box .item-date-time{
+        left: 0px;
+        text-align: left;
+    }
+    .timeaxis-box .circle{
+        left: auto;
+        right: 8px;
+    }
+    .timeaxis-box .con{
+        margin: 0px;
+    }
+    .timeaxis-line{
+        display: none;
+    }
+}

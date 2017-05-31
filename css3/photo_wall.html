@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>photo_wall</title>
+  <style type="text/css">
+    *{
+      padding: 0px;
+      margin: 0px;
+    }
+    body{
+      background: black;
+    }
+    .photo-wall{
+      position: relative;
+      width: 600px;
+      margin: 0 auto;
+    }
+    .photo-item{
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      z-index: 2;
+      margin-left: -100px;
+      border: 8px solid #fff;
+      box-shadow: 3px 1px 1px rgba(0, 0, 0, 0.6);
+      -webkit-transform-origin: center 300px;
+      transform-origin: center 300px;
+      -webkit-transform: rotate(5deg);
+      transform: rotate(5deg);
+      -webkit-transition: transform .5s ease-in-out;
+      transition: transform .5s ease-in-out;
+    }
+    .photo-item:first-child{
+      z-index: 3;
+      margin-left: -120px;
+      -webkit-transform: rotate(-5deg);
+      transform: rotate(-5deg);
+    }
+    .photo-item:last-child{
+      z-index: 1;
+      margin-left: -80px;
+      -webkit-transform: rotate(10deg);
+      transform: rotate(10deg);
+    }
+    .photo-wall:hover .photo-item:first-child{
+      -webkit-transform: rotate(-30deg);
+      transform: rotate(-30deg);
+    }
+    .photo-wall:hover .photo-item:last-child{
+      -webkit-transform: rotate(30deg);
+      transform: rotate(30deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="photo-wall">
+    <div class="photo-item">
+      <img src="images/naruto1.jpg" width="200" />
+    </div>
+    <div class="photo-item">
+      <img src="images/naruto2.jpg" width="200" />
+    </div>
+    <div class="photo-item">
+      <img src="images/b.jpg" width="200" />
+    </div>
+   <!--  <div class="photo-item">
+      <img src="images/naruto3.jpg" width="200" />
+    </div> -->
+  </div>
+</body>
+</html>

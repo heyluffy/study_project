@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>loading</title>
+  <style type="text/css">
+    @-webkit-keyframes loading{
+      from{
+        -webkit-transform: scale(0.0);
+        opacity: 1;
+      }
+      to {
+        -webkit-transform: scale(1.0);
+        opacity: 0; 
+      }
+    }
+    @keyframes loading{
+      from{
+        transform: scale(0.0);
+        opacity: 1;
+      }
+      to {
+        transform: scale(1.0);
+        opacity: 0; 
+      }
+    }
+    .spinner{
+      width: 20px;
+      height: 20px;
+      background-color: green;
+      border-radius: 50%;
+      -webkit-animation: 1s loading infinite ease-in-out;
+      animation: 1s loading infinite ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner">
+  </div>
+  <pre>
+    <code><html>123123</html></code>
+  </pre>
+</body>
+</html>
