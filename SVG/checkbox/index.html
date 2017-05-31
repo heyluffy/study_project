@@ -4,22 +4,54 @@
   <meta charset="UTF-8">
   <title>svg checkbox效果</title>
   <style type="text/css">
-  span{
-    display: none;
-  }
-    input[type="checkbox"]:checked + span {
-      display: block;
+    *{
+      padding: 0px;
+      margin: 0px;
+    }
+    input[type="checkbox"]{
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: -1;
+      width: 0px;
+    height: 0px;
+    opacity: 0;
+    }
+    .checkbox-wrapper{
+      font-size: 16px;
+      stroke: rgb(183, 183, 183);
+      stroke-width: 3px;
+      font-size: 0px;
+    }
+    .checkbox-wrapper label{
+      cursor: pointer;
+    }
+    .checkbox-wrapper svg{
+      position: relative;
+      vertical-align: middle;
     }
   </style>
 
 </head>
 <body>
   <div class="box">
-    <input type="checkbox" id="checkbox" name="">
-    <label style="padding: 0 30px; background: red; position: relative; z-index: -1;">
-      <input type="checkbox" name="" style="opacity: 0;" />
-      <span>123</span>
-    </label>
+    <div class="checkbox-wrapper">
+      <span style="font-size: 20px; background: red; vertical-align: middle;">xxx选项一</span>
+      123123qweqweqe
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10" y="10" width="50" height="50">
+        <!--<circle fill="none" stroke="#B7B7B7" stroke-width="3" stroke-miterlimit="10" cx="25.11" cy="24.883" r="23.519"></circle>-->
+        <circle fill="none"  cx="50%" cy="50%" r="22"></circle>
+        <path></path>
+      </svg>
+      <label id="label">
+        <input type="checkbox"/>
+        <!--<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10" y="10" width="50" height="50">-->
+          <!--&lt;!&ndash;<circle fill="none" stroke="#B7B7B7" stroke-width="3" stroke-miterlimit="10" cx="25.11" cy="24.883" r="23.519"></circle>&ndash;&gt;-->
+          <!--<circle fill="none"  cx="50%" cy="50%" r="22"></circle>-->
+          <!--<path></path>-->
+        <!--</svg>-->
+      </label>
+    </div>
   </div>
 </body>
 </html>
