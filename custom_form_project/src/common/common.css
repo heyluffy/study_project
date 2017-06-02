@@ -1,0 +1,31 @@
+html, body, ul, li, h1, h2, h3, h4, h5, h6, p, table, tr, th, td{
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  font-family: '微软雅黑';
+  font-size: 16px;
+  color: #354B66;
+}
+ul, li{
+  list-style: none;
+}
+img{
+  border: 0px;
+  vertical-align: top;
+}
+a{
+  text-decoration: none;
+}
+*{
+  box-sizing: border-box;
+}
+.clr{
+  zoom: 1;
+}
+.clr:after{
+  display: block;
+  content: "";
+  clear: both;
+}
+

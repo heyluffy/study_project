@@ -14,14 +14,22 @@
       top: 0px;
       z-index: -1;
       width: 0px;
-    height: 0px;
-    opacity: 0;
+      height: 0px;
+      opacity: 0;
     }
     .checkbox-wrapper{
-      font-size: 16px;
-      stroke: rgb(183, 183, 183);
-      stroke-width: 3px;
       font-size: 0px;
+      padding-top: 20px;
+      stroke-width: 3px;
+    }
+    .theme1{
+      stroke: #1ABC9C;
+    }
+    .theme2{
+      stroke: #2ECC71;
+    }
+    .theme3{
+      stroke: #3498DB;
     }
     .checkbox-wrapper label{
       cursor: pointer;
@@ -30,26 +38,52 @@
       position: relative;
       vertical-align: middle;
     }
+    .checkbox-wrapper path{
+      stroke-dasharray: 189;
+      stroke-dashoffset: -189;
+      transition: all 0.5s ease-in-out;
+    }
+    .checkbox-wrapper input[type="checkbox"]:checked + svg path {
+      stroke-dashoffset: 0;
+    }
+    .checkbox-wrapper span{
+      padding: 0 5px;
+    }
   </style>
-
 </head>
 <body>
   <div class="box">
-    <div class="checkbox-wrapper">
-      <span style="font-size: 20px; background: red; vertical-align: middle;">xxx选项一</span>
-      123123qweqweqe
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10" y="10" width="50" height="50">
-        <!--<circle fill="none" stroke="#B7B7B7" stroke-width="3" stroke-miterlimit="10" cx="25.11" cy="24.883" r="23.519"></circle>-->
-        <circle fill="none"  cx="50%" cy="50%" r="22"></circle>
-        <path></path>
-      </svg>
+    <div class="checkbox-wrapper theme1">
       <label id="label">
         <input type="checkbox"/>
-        <!--<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10" y="10" width="50" height="50">-->
-          <!--&lt;!&ndash;<circle fill="none" stroke="#B7B7B7" stroke-width="3" stroke-miterlimit="10" cx="25.11" cy="24.883" r="23.519"></circle>&ndash;&gt;-->
-          <!--<circle fill="none"  cx="50%" cy="50%" r="22"></circle>-->
-          <!--<path></path>-->
-        <!--</svg>-->
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10" y="10" width="50" height="50">
+          <!--<circle fill="none" stroke="#B7B7B7" stroke-width="3" stroke-miterlimit="10" cx="25.11" cy="24.883" r="23.519"></circle>-->
+          <circle fill="none" stroke="#B7B7B7" cx="50%" cy="50%" r="23.6"></circle>
+            <path fill="none" stroke-width="3" d="M48.659,25c0,12.998-10.537,23.534-23.534,23.534 S1.591,37.998,1.591,25S12.127,1.466,25.125,1.466c9.291,0,17.325,5.384,21.151,13.203L19,36l-9-14" ></path>
+          </svg>
+        <span style="vertical-align: middle; font-size: 16px;">选项一</span>
+      </label>
+    </div>
+    <div class="checkbox-wrapper theme2">
+      <label id="label">
+        <input type="checkbox"/>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10" y="10" width="50" height="50">
+          <!--<circle fill="none" stroke="#B7B7B7" stroke-width="3" stroke-miterlimit="10" cx="25.11" cy="24.883" r="23.519"></circle>-->
+          <circle fill="none" stroke="#B7B7B7" cx="50%" cy="50%" r="23.6"></circle>
+          <path fill="none" stroke-width="3" d="M48.659,25c0,12.998-10.537,23.534-23.534,23.534 S1.591,37.998,1.591,25S12.127,1.466,25.125,1.466c9.291,0,17.325,5.384,21.151,13.203L19,36l-9-14" ></path>
+        </svg>
+        <span style="vertical-align: middle; font-size: 16px;">选项二</span>
+      </label>
+    </div>
+    <div class="checkbox-wrapper theme3">
+      <label id="label">
+        <input type="checkbox"/>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10" y="10" width="50" height="50">
+          <!--<circle fill="none" stroke="#B7B7B7" stroke-width="3" stroke-miterlimit="10" cx="25.11" cy="24.883" r="23.519"></circle>-->
+          <circle fill="none" stroke="#B7B7B7" cx="50%" cy="50%" r="23.6"></circle>
+          <path fill="none" stroke-width="3" d="M48.659,25c0,12.998-10.537,23.534-23.534,23.534 S1.591,37.998,1.591,25S12.127,1.466,25.125,1.466c9.291,0,17.325,5.384,21.151,13.203L19,36l-9-14" ></path>
+        </svg>
+        <span style="vertical-align: middle; font-size: 16px;">选项三</span>
       </label>
     </div>
   </div>

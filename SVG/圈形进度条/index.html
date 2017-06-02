@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>svg 圈形进度条</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        .progress-box{
+            position: relative;
+            text-align: center;
+        }
+        .progress-box svg{
+            transform: rotate(90deg);
+        }
+        .progress-box .circle-bg, .progress-box .circle-progress{
+            stroke: #aaa;
+            stroke-width: 10;
+        }
+        .progress-box .circle-progress{
+            stroke: #3760e5;
+            stroke-dasharray: 682;
+            stroke-dashoffset: 682;
+            stroke-linecap: round;
+            transition: all 1s ease-out;
+        }
+        .progress-box:hover .circle-progress{
+            stroke-dashoffset: 0;
+        }
+        .progress-percent{
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            top: 50%;
+            width: 120px;
+            height: 106px;
+            margin: -50px 0 0 -60px;
+            font-size: 0px;
+            color: #3760e5;
+            text-align: center;
+        }
+        .progress-percent .percent-post{
+            display: inline-block;
+            font-size: 80px;
+            width: 46px;
+            height: 106px;
+            line-height: 106px;
+            overflow: hidden;
+        }
+        .progress-percent .percent-post span{
+            display: inline-block;
+            width: 100%;
+        }
+        .progress-percent .percent-post .con{
+            transition: all 1s ease-out;
+        }
+        .progress-percent .icon{
+            width: 10px;
+            height: 16px;
+            font-size: 16px;
+            line-height: 60px;
+            vertical-align: top;
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+<div class="progress-box">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="10" y="10" width="300" height="300">
+        <!--加了边框以后原本的200*200区域的圆变成210*210区域的圆，内容区分了10给边框，另一半的边框通过增加区域获得大小-->
+        <circle class="circle-bg" fill="none" cx="150" cy="150" r="100"></circle>
+        <circle id="circle-progress" class="circle-progress" fill="none" cx="150" cy="150" r="100"></circle>
+    </svg>
+    <div class="progress-percent">
+        <div class="percent-post decade" id="percent-decade">
+            <span class="con">
+                0<br/>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>
+            </span>
+        </div>
+        <div class="percent-post" id="percent-unit">
+            <span class="con">
+                0<br/>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>
+            </span>
+        </div>
+        <div class="percent-post icon" id="percent-icon">%</div>
+    </div>
+</div>
+<script>
+  window.onload = function () {
+      var percent = 0.68;
+      var obj = document.getElementById("circle-progress");
+      var decade = document.getElementById("percent-decade");
+      var unit = document.getElementById("percent-unit");
+      obj.style.strokeDashoffset = (1 - percent) * 682;
+      var a1 = percent * 100 % 10;
+      var a2 = parseInt(percent * 100 / 10) % 10;
+      decade.childNodes[1].style.marginTop = -1 * (a2 * 106) + "px";
+      unit.childNodes[1].style.marginTop = -1 * (a1 * 106) + "px";
+  }
+</script>
+</body>
+</html>
